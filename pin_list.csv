@@ -1,0 +1,8 @@
+D0,inactive,output,sensor0,200,lower
+D1,inactive,output,sensor1,200,bigger
+D2,inactive,output,sensor2,200,lower
+D3,inactive,output,sensor3,200,bigger
+D4,active,output,potenciometro,456,lower
+D5,inactive,output,sensor5,200,bigger
+D6,inactive,output,sensor6,200,lower
+D7,inactive,output,sensor7,200,bigger

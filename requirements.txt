@@ -1,0 +1,4 @@
+devicecloud==0.4.2
+Flask==0.11.1
+Flask_GoogleMaps==0.2.4
+lxml==3.5.0

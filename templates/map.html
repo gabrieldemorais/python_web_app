@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>INTELIDEV</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />   
+
+    <link rel="stylesheet" href= "{{ url_for('static',filename='styles/style_map.css')}}" /> 
+    <link rel="stylesheet" href= "{{ url_for('static',filename='styles/skel.css')}}" />
+    <link rel="stylesheet" href= "{{ url_for('static',filename='styles/style.css')}}" />
+    <link rel="stylesheet" href= "{{ url_for('static',filename='styles/style-xlarge.css')}}" />
+     
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="header" class="skel-layers-fixed" >
+    <h1><a href="{{ url_for('index') }}">I N T E L I D E V</a></h1>
+    <nav id="nav">
+      <ul>
+        <li><a href="#openModal">Configurações</a></li>
+        <li><a href="{{ url_for('logout') }}" class="button special">Sair</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ <div id="openModal" class="modalDialog">
+  <div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Selecione o limite</h2>
+    <p>Limite atual: {{current_threshold}}</p>
+    <form method = "post" class="form-signin">        
+      <input type="text" class="form-control" name="threshold" placeholder="Digite o novo limite" required="" autofocus="" /><br>
+      <center><button class="button" type="submit">Atualizar</button></center>
+</form>
+  </div>
+</div>
+
+  <div id="sidebar"></div>
+
+  <div id="map"></div>
+
+  <script>
+    var locations = {{loc | tojson}};
+  </script>
+  <script src="{{ url_for('static',filename='js/map.js')}}"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDof8gb1Ci4VSMKVzarAisrJ8hNXUdeHUM&callback=initMap" ></script>
+</body>
+
+</html>
